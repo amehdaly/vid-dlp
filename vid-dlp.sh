@@ -51,8 +51,15 @@ konsole --noclose -e bash -c "
     EXIT_CODE=\$?
     if [ \$EXIT_CODE -eq 0 ]; then
         echo
-        echo '✅ Download complete. File saved to:'
+        echo '✅ Download complete.'
+        echo 'File saved to:'
         echo '$SAVE_DIR'
+        echo
+        # Ask user to open folder
+        kdialog --yesno 'Download complete!\n\nWould you like to open the download folder?' --title 'Open Folder'
+        if [ \$? -eq 0 ]; then
+            xdg-open \"$SAVE_DIR\" >/dev/null 2>&1 &
+        fi
     else
         echo
         echo '❌ Download failed. Please check your connection or URL.'
