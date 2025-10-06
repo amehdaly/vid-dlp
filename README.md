@@ -50,6 +50,21 @@ sudo apt install yt-dlp kdialog konsole ffmpeg      # Debian / Ubuntu
 sudo dnf install yt-dlp kdialog konsole ffmpeg      # Fedora
 ```
 
+## 🧭 How to Use the Script
+
+Before running, ensure the script file is executable — this step is mandatory:
+
+```bash
+chmod +x vid-dlp.sh
+```
+
+## ▶️ From Konsole:
+
+```bash
+vid-dlp.sh
+```
+
+---
 
 # 🙌 Credits
 
