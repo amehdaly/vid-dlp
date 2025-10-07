@@ -12,16 +12,16 @@ if ! command -v kdialog &>/dev/null; then
 fi
 
 # --- Ask for video URL ---
-VIDEO_URL=$(kdialog --inputbox "Enter YouTube or video URL:")
+VIDEO_URL=$(kdialog --inputbox "Enter YouTube or video URL:" --geometry=500x500 --title "Video Downloader")
 if [ -z "$VIDEO_URL" ]; then
-    kdialog --sorry "No URL provided. Exiting."
+    kdialog --sorry "No URL provided. Exiting." --title "No URL"
     exit 1
 fi
 
 # --- Ask for save directory ---
-SAVE_DIR=$(kdialog --getexistingdirectory "$HOME" "Select a folder to save the downloaded video")
+SAVE_DIR=$(kdialog --getexistingdirectory "$HOME/Videos/" "Select a folder to save the downloaded video")
 if [ -z "$SAVE_DIR" ]; then
-    kdialog --sorry "No destination selected. Exiting."
+    kdialog --sorry "No destination selected. Exiting." --title "No Destination"
     exit 1
 fi
 
